@@ -13,6 +13,7 @@
         }
         h1 {
             color: #2c3e50;
+            position: relative;
         }
         iframe {
             width: 100%;
@@ -20,10 +21,37 @@
             border: none;
             margin-top: 20px;
         }
+        /* Home button style */
+        #homeButton {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #homeButton:hover {
+            background-color: #2980b9;
+        }
     </style>
 </head>
 <body>
-    <h1>Holy Quran</h1>
-    <iframe src="https://drive.google.com/file/d/1_WMNh80dYMtfhx10cbsKtlgR9tCWZ4GN/preview? #toolbar = 0"></iframe>
+    <h1>Holy Quran
+        <!-- Home Button -->
+        <button id="homeButton">Home</button>
+    </h1>
+
+    <iframe id="pdfIframe" src="https://drive.google.com/file/d/1_WMNh80dYMtfhx10cbsKtlgR9tCWZ4GN/preview?usp=embed_googleplus"></iframe>
+
+    <script>
+        // Function to reload the iframe and take it to the first page
+        document.getElementById("homeButton").onclick = function() {
+            const iframe = document.getElementById("pdfIframe");
+            iframe.src = "https://drive.google.com/file/d/1_WMNh80dYMtfhx10cbsKtlgR9tCWZ4GN/preview?usp=embed_googleplus";
+        };
+    </script>
 </body>
 </html>
